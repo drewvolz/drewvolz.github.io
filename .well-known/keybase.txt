@@ -1,0 +1,75 @@
+==================================================================
+https://keybase.io/drewvolz
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://drewvolz.com
+  * I am drewvolz (https://keybase.io/drewvolz) on keybase.
+  * I have a public key with fingerprint B89C 3B7A 8A69 6D7D 965C  DBA6 4EA4 DA2C 07B5 A350
+
+To do so, I am signing this object:
+
+{
+    body: {
+        key: {
+            eldest_kid: 01013eb544c8e946fd25a7531696279953efa0fd229c9e3a64c82687750e68e796400a,
+            fingerprint: b89c3b7a8a696d7d965cdba64ea4da2c07b5a350,
+            host: keybase.io,
+            key_id: 4ea4da2c07b5a350,
+            kid: 01013eb544c8e946fd25a7531696279953efa0fd229c9e3a64c82687750e68e796400a,
+            uid: 6e6e7a07e9ffacc5c445e1f7bcc31519,
+            username: drewvolz
+        },
+        revoke: {
+            sig_ids: [
+                1016d22618e977ff185c88c6bfb3cb3899372666206d3716cafff5a86101ec540f
+            ]
+        },
+        service: {
+            hostname: drewvolz.com,
+            protocol: https:
+        },
+        type: web_service_binding,
+        version: 1
+    },
+    ctime: 1490415712,
+    expire_in: 157680000,
+    prev: c423ecc957233f3e8f9c67f4350481a94aed61af8a555631edb681db4115af36,
+    seqno: 9,
+    tag: signature
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.66
+Comment: https://keybase.io/crypto
+
+yMJrAnicrZJfaBRHHMfvEpXmoBiM1NhGioNBQmKys7Mzs3Oo9KlIQEw0ShvbXGdn
+Z+KSZPfc3dwZxWBpVVQEBf8EfGkkJXmwDaVgpGqJpglpqqU1tPUfrfgQWrBBOB+k
+FelsaF+Kj87LMDPf7+f3nd/MN6+WpzLpvunmA8/Pfro1/d21Um/qnZ8ef7APOIHb
+B7L7QJdcmGS3K6M41+W5IAsMaEAkHWxZwpbMIso1MacYQcKISRnDSCpu6F2TCSYR
+J1pnEptSbEhiS8qIZRgcNADl+Z0yzIeeH2usYzOBHMptrjkudRnBwnW0W3LL5aYw
+qIM5woY27gqixKHDOTySjV6g9/QitxDvBfqXnLt3AUckkZQbVDKluBBYWBaWUFFH
+CAQxZIkwkqHPe6RWu6EsFoLuvWB/AwhlIeiSSV8jr1OHjkB2J9DhiC5NoM5GqVLQ
+xsK2BXGUg4SDbMYQNQkhpkFcRCERXCmFuU20UQpsGQq8r9m6YsETC/CkS/+r3iiC
+Hp0rHwZxIIJufbIrjvNRNkkV9+UTaVE6uX8hOcfzXf1G2lGQYeQFPshCrRSxl1Ch
+xQwLYgrNBiD35L1Q5rxEgSmxDT2SOrKgkcIykRSCYWoipJC0FROEKks/jmVDziwu
+XQK5sjnGmCAoXYfY0HUsCDFXiIDkWrv9AGSZjsk7NVI3zudxbyjB/uvj7y1KpTOp
+JYvLkr+bylRU/vejN5VeSU10HDl+4vbSqfV1U6fS5PLrPcW16ueDz/iX9x+uu4tW
+D7Yfrvz8FxK+/VHh6NlHzxYNbWjbsLT27/IVfkWxdk3pzaYfPnvr4IdP5gZaZ+58
+0TrW0VpddqC2pqX+yum5+atruuZLg7eqppdXne4YMEa/nU5VP/qzc/jd4WPbatpo
+y/m+kfq6k5fObbTq7IFm8LSMz0zezVxcWx7kZ2ZX/vHbDTdzY+hBqqn9TPpCW/NY
+5ez5sVXFbae2fL/b+aRYap+dq+B7/KGVo/XnBhuW/Ti/7nI0cCjsv3WTjOeNrTV/
+fd19r2ZzddPIZH/j76Nf9Z957eGDJfHI5PiO7S2l5jc+7n++eOLXw+Iftx5ZsQ==
+=BYN2
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/drewvolz
+
+==================================================================
+
