@@ -1,224 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="The homepage of Drew Volz" />
     <title>Drew Volz</title>
-
-    <link rel="icon" type="image/png" href="https://drewvolz.com/icon.png">
-
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-
-    <!-- Custom Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
-
-    <!-- Plugin CSS -->
-    <link rel="stylesheet" href="css/animate.min.css" type="text/css">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/creative.css" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+    <link rel="shortcut icon" type="image/png" href="./icon.png">
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700|Montserrat' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="./styles.css" type="text/css">
 </head>
-
-<body id="page-top">
-
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Drew Volz</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a class="page-scroll" href="#about">About</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#resume">Resume</a>
-                    </li>
-<!--                     <li>
-                        <a class="page-scroll" href="#portfolio">Portfolio</a>
-                    </li> -->
-                    <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
+<body>
+    <div class="grid-container">
+        <div class="main">
+            <img class="avatar" src="./avatar.jpg" alt="photo of drew" />
+            <h1 class="title">Drew Volz</h1>                  
+            <ul>
+                <li><a href="https://github.com/drewvolz">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/drew-volz/">LinkedIn</a></li>
+                <li><a href="mailto:drewvolz@icloud.com">Email</a></li>
+                <li><a href="./Drew_Volz_Resume.pdf">Resume</a></li>
+            </ul>
+            <p class="greeting">👋 Hello! I'm glad you're here.</p>
+            <p class="about">I'm an iOS and web developer based in San Francisco. I'm also interested in <a href="https://soundcloud.com/dvolz">composing music</a>, writing educational software, and poking at private APIs. Currently at thoughtbot, previously Lexmark.</p>
         </div>
-        <!-- /.container-fluid -->
-    </nav>
-
-    <section id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">About Me</h2>
-                    <hr class="primary">
-                </div>
-            </div>
+        <div class="footer">
+            <span>100% javascript-free</span>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-4 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-home wow bounceIn text-primary"></i>
-                        <h3>Hometown</h3>
-                        <p class="text-muted">Boulder, Colorado</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-graduation-cap wow bounceIn text-primary" data-wow-delay=".1s"></i>
-                        <h3>Education</h3>
-                        <p class="text-muted">St. Olaf College<br>B.A. Computer Science</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-briefcase wow bounceIn text-primary" data-wow-delay=".2s"></i>
-                        <h3>Work</h3>
-                        <p class="text-muted">thoughtbot<br>Software Engineer</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="bg-primary" id="resume">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">Looking for my Resume? </h2>
-                    <hr class="light">
-                    <p class="text-faded">Look no further!</p>
-                    <a href="../resume" target="_blank" class="btn btn-default btn-xl">Download</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--
-    <section class="no-padding" id="portfolio">
-        <div class="container-fluid">
-            <div class="row no-gutter">
-                <div class="col-lg-4 col-sm-6">
-                    <a href="https://github.com/StoDevX/AAO-React-Native/" target="_blank" class="portfolio-box">
-                        <img src="images/portfolio/1.png" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    App Development
-                                </div>
-                                <div class="project-name">
-                                    All About Olaf<br><br><p style="font-size: 14px;">An iOS/Android app which provides news, events, building hours, directory, dictionary, map, orgs, webcams, student course schedule, account balances, and lunch and dinner menus at St. Olaf College.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="https://github.com/StoDevX/ksto-radio" target="_blank" class="portfolio-box">
-                        <img src="images/portfolio/2.png" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    App Development
-                                </div>
-                                <div class="project-name">
-                                    KSTO Radio<br><br><p style="font-size: 14px;">KSTO is a student-run radio station of St. Olaf College. With this app, you can listen to shows, call-in to the station, and see who will broadcast next.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="https://soundcloud.com/dvolz/" target="_blank" class="portfolio-box">
-                        <img src="images/portfolio/6.png" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Music Composition
-                                </div>
-                                <div class="project-name">
-                                    My Compositions<br><br><p style="font-size: 14px;">I play the alto/tenor saxophones and piano. My pieces vary in genre from ska to classical to electronic.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-    -->
-    <aside class="bg-dark">
-        <div class="container text-center">
-            <div class="call-to-action">
-                <h2>I am also on GitHub.</h2>
-                <br>
-                <i class="fa fa-github fa-5x wow bounceIn" data-wow-delay=".1s" style="visibility: visible; animation: bounceIn 0.1s; -webkit-animation: bounceIn 0.1s;"></i>
-                <p><a href="https://github.com/drewvolz" target="_blank">GitHub</a></p>
-            </div>
-        </div>
-    </aside>
-
-    <section id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">Let's Get In Touch!</h2>
-                    <hr class="primary">
-                    <p>I am reachable through email or LinkedIn. I'll try my best to get back to you!</p>
-                </div>
-                <div class="col-lg-4 col-lg-offset-2 text-center">
-                    <i class="fa fa-envelope-o fa-3x wow bounceIn"></i>
-                    <p><a href="mailto:drewvolz@icloud.com">Email</a></p>
-                </div>
-                <div class="col-lg-4 text-center">
-                    <i class="fa fa-linkedin-square fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-                    <p><a href="https://www.linkedin.com/in/drew-volz" target="_blank">LinkedIn</a></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="js/jquery.easing.min.js"></script>
-    <script src="js/jquery.fittext.js"></script>
-    <script src="js/wow.min.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="js/creative.js"></script>
-
+    </div>
 </body>
-
 </html>
