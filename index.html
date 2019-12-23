@@ -2,29 +2,146 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="The homepage of Drew Volz" />
     <title>Drew Volz</title>
-    <link rel="shortcut icon" type="image/png" href="./icon.png">
+    <link rel="shortcut icon" type="image/png" href="./images/icon.png">
     <link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,700|Montserrat' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="./styles.css" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/styles.css" type="text/css">
+    <link rel="stylesheet" href="./css/projects.css" type="text/css">
 </head>
 <body>
     <div class="grid-container">
         <div class="main">
-            <img class="avatar" src="./avatar.png" alt="photo of drew" />
-            <h1 class="title">Drew Volz</h1>                  
-            <ul>
-                <li><a href="https://github.com/drewvolz">GitHub</a></li>
-                <li><a href="https://www.linkedin.com/in/drew-volz/">LinkedIn</a></li>
-                <li><a href="mailto:drewvolz@icloud.com">Email</a></li>
-                <li><a href="./Drew_Volz_Resume.pdf">Resume</a></li>
-            </ul>
-            <p class="greeting">👋 Hello! I'm glad you're here.</p>
-            <p class="about">I'm an iOS and web developer based in San Francisco. I'm also interested in <a href="https://soundcloud.com/dvolz">composing music</a>, writing educational software, and poking at private APIs. Currently at thoughtbot, previously Lexmark.</p>
+            <section class="about">
+                <h1 class="title">Drew Volz</h1>
+                <img class="avatar" src="./images/avatar.png" alt="photo of drew" />
+                <ul class="navigation">
+                    <li><a href="https://github.com/drewvolz">GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/drew-volz/">LinkedIn</a></li>
+                    <li><a href="mailto:drewvolz@icloud.com">Email</a></li>
+                    <li><a href="./Drew_Volz_Resume.pdf">Resume</a></li>
+                </ul>
+            </section>
+
+            <h1>About Me</h1>
+
+            <p class="text">I'm an iOS and web developer based in San Francisco. I'm also interested in <a href="https://soundcloud.com/dvolz">composing music</a>, writing educational software, and poking at private APIs. Currently at thoughtbot, previously Lexmark.</p>
+
+            <h1>Projects</h1>
+
+            <p class="text projects">Here are a few open-source projects I've been working on:</p>
+
+            <div class="example">
+                <h1>All About Olaf
+                    <span class="links">
+                        <a title="GitHub" href="https://github.com/StoDevX/AAO-React-Native"><i class="fab fa-github"></i></a>
+                        <a title="See on iOS App Store" href="https://itunes.apple.com/us/app/all-about-olaf/id938588319"><i class="fab fa-app-store-ios"></i></a>
+                        <a title="See on Google Play" href="https://play.google.com/store/apps/details?id=com.allaboutolaf"><i class="fab fa-google-play"></i></a>
+                    </span>
+                </h1>
+
+                <div class="text left">
+                    <p class="description">An unofficial mobile app for St.&nbsp;Olaf College.</p>
+                    <p>This iOS and Android app provides valuable information to students, faculty, staff, and visitors of St.&nbsp;Olaf College.
+                        <details>
+                            <summary>Features</summary>
+                            <ul>
+                                <li>Browse cafe menus</li>
+                                <li>Access balances and meal plan info</li>
+                                <li>Release print jobs</li>
+                                <li>Explore student work opportunities</li>
+                                <li>Search for courses</li>
+                                <li>View building open and close schedules</li>
+                                <li>Peruse all campus-wide calendars</li>
+                                <li>Access the campus directory and important contacts</li>
+                                <li>Tune-in to streaming events and radio programs</li>
+                                <li>Keep up with campus news</li>
+                                <li>See the campus at a birds-eye view with the map</li>
+                                <li>Track the local bus routes</li>
+                                <li>Define campus terms with the dictionary</li>
+                                <li>Discover clubs and organizations</li>
+                                <li>Quick access to Moodle</li>
+                            </ul>
+                        </details>
+                </div>
+
+                <div class="image right">
+                    <img src="images/aao.png" title="Screenshot of All About Olaf for iOS" alt="Screenshot of All About Olaf for iOS" />
+                </div>
+            </div>
+
+            <div class="example">
+                <h1>CARLS
+                    <span class="links">
+                        <a title="GitHub" href="https://github.com/carls-app/carls/"><i class="fab fa-github"></i></a>
+                        <a title="See on iOS App Store" href="https://itunes.apple.com/us/app/carls-carleton-in-your-pocket/id1273593313"><i class="fab fa-app-store-ios"></i></a>
+                        <a title="See on Google Play" href="https://play.google.com/store/apps/details?id=com.carls"><i class="fab fa-google-play"></i></a>
+                    </span>
+                </h1>
+
+                <div class="text left">
+                    <p class="description">An unofficial mobile app for Carleton College.</p>
+                    <p>This iOS and Android app provides valuable information to students, faculty, staff, and visitors of Carleton College.
+                        <details>
+                            <summary>Features</summary>
+                            <ul>
+                                <li>Browse cafe menus</li>
+                                <li>Access balances and meal plan info</li>
+                                <li>Release print jobs</li>
+                                <li>Explore student work opportunities</li>
+                                <li>Search for courses</li>
+                                <li>View building open and close schedules</li>
+                                <li>Peruse all campus-wide calendars</li>
+                                <li>Access the campus directory and important contacts</li>
+                                <li>Tune-in to streaming events and radio programs</li>
+                                <li>Watch archived convocations</li>
+                                <li>Keep up with campus news</li>
+                                <li>Noon News Bulletin listings</li>
+                                <li>See the campus at a birds-eye view with the map</li>
+                                <li>Track the local bus routes</li>
+                                <li>Define campus terms with the dictionary</li>
+                                <li>Discover clubs and organizations</li>
+                                <li>Quick access to Moodle</li>
+                            </ul>
+                        </details>
+                </div>
+
+                <div class="image right">
+                    <img src="images/carls.png" title="Screenshot of CARLS for iOS" alt="Screenshot of CARLS for iOS" />
+                </div>
+            </div>
+
+            <div class="example full">
+                <h1>CCC Server
+                    <span class="links">
+                            <a title="GitHub link for ccc-server" href="https://github.com/frog-pond/ccc-server/"><i class="fab fa-github"></i></a>
+                        </span>
+                </h1>
+
+                <div class="text left">
+                    <p class="description">A server to power both CARLS and All About Olaf.</p>
+                    <p>Deployed via Docker on DigitalOcean, capable of handling over 2000 requests per second.</p>
+                    <details>
+                        <summary>Features</summary>
+                        <ul>
+                            <li>Network request caching</li>
+                            <li>Data fetching for Google Calendar</li>
+                            <li>Data fetching for RSS</li>
+                            <li>Data fetching for Wordpress</li>
+                            <li>Data fetching for ReasonCMS</li>
+                            <li>Data fetching for GitHub Pages</li>
+                            <li>Data fetching for Bon Appetit</li>
+                            <li>Data fetching for Presence.io</li>
+                        </ul>
+                    </details>
+                </div>
+            </div>
         </div>
+
         <div class="footer">
-            <span>100% javascript-free</span>
+            <span>This site is 100% javascript-free</span>
         </div>
     </div>
 </body>
