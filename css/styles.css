@@ -1,16 +1,18 @@
 /* general */
 
 html, body {
-    height: 100%;
     width: 100%;
     margin: 0;
-    background-color: #2651a4;
-    color: white;
     font-family: Montserrat, sans-serif;
 }
 
 body, html, p {
     font-size: 1.1rem;
+}
+
+body {
+    background: var(--background);
+    color: var(--text-color);
 }
 
 h1 {
@@ -55,7 +57,7 @@ a:hover {
     }
 
     .navigation > li~li {
-        border-left: 1px solid white;
+        border-left: 1px solid var(--text-color);
     }
 
     .navigation > li > a {
@@ -106,10 +108,9 @@ a:hover {
 .avatar {
     border-radius: 50%;
     width: 10em;
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
     border: 3px solid white;
     margin: 25px;
+    filter: brightness(var(--brightness));
 }
 
 .text {

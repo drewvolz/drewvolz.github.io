@@ -17,25 +17,24 @@ details[open] summary ~ * {
 
 .example {
 	font-size: 80%;
-	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+	box-shadow: var(--box-shadow-2);
     padding: 16pt;
     margin: 1em 2em;
 	transition: box-shadow 0.125s ease-in-out;
 	border-radius: 4pt;
-    background-color:rgb(0, 0, 0, 0.5);
+    background-color: var(--example-bg);
 
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-row-gap: 0em;
     grid-column-gap: 1em;
+
+    /* fixes flickering */
+    -webkit-transform-style: preserve-3d;
 }
 
 .example.full {
     grid-template-columns: 3fr;
-}
-
-.example:nth-child(even) {
-    background-color:rgb(0, 0, 0, 0.4);
 }
 
 .example > * {
@@ -44,7 +43,7 @@ details[open] summary ~ * {
 }
 
 .example:hover {
-	box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .2);
+	box-shadow: var(--box-shadow-8);
 	transition: box-shadow 0.125s ease-in-out;
 	z-index: 1;
 }
@@ -108,6 +107,7 @@ details[open] summary ~ * {
 .example img {
     max-width: 80%;
     margin-left: auto;
+    filter: brightness(var(--brightness));
 }
 
 @media screen and (max-width: 768px) {
@@ -115,7 +115,7 @@ details[open] summary ~ * {
         grid-template-columns: auto;
         margin: 1em 0em;
     }
-    
+
     .example > h1 { 
         display: block;
     }
