@@ -86,13 +86,6 @@ a:hover {
     margin: 0 auto;
 }
 
-.footer { 
-    grid-area: footer;
-    text-align: center;
-    padding: 10px;
-    font-size: 0.7rem;
-}
-
 /* components */
 
 .about {
