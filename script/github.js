@@ -4,21 +4,12 @@ const activityContainerParentSelectorID = 'section#gh-activity-container'
 const activityContainerChildSelectorID = 'div#gh-activity'
 const activityContainer = document.querySelector(activityContainerChildSelectorID)
 
+const storage = window.localStorageExtension
+
 const render = (container, data) => {
     container.innerHTML = ''
 
-    const dataToRender = data.filter(event => {
-        const {payload, actor, type} = event
-
-        const filterType = ['PullRequestEvent']
-        const isCorrectType = filterType.includes(type)
-        const isCorrectAction = payload.action === 'opened'
-        const isCorrectUser = actor.login === username
-    
-        return isCorrectType && isCorrectAction && isCorrectUser
-    })
-
-    dataToRender.forEach(event => {
+    data.forEach(event => {
         const {id, type, payload} = event
 
         const eventContainer = document.createElement('div')
@@ -41,17 +32,50 @@ const render = (container, data) => {
     })
 }
 
-if (activityContainer) {
-    fetch(`https://api.github.com/users/${username}/events?per_page=100`)
-        .then((response) => {
-            if (!(response.status >= 200 && response.status < 299 || response.status === 304)) {
-                console.warn(`${response.status} status received, hiding recent github activity section`)
-                document.querySelector(activityContainerParentSelectorID).style.display = 'none'
-            }
+const filterData = (data) => {
+    return data.filter(event => {
+        const {payload, actor, type} = event
 
-            return response.json()
-        })
-        .then(data => render(activityContainer, data))
+        const filterType = ['PullRequestEvent']
+        const isCorrectType = filterType.includes(type)
+        const isCorrectAction = payload.action === 'opened'
+        const isCorrectUser = actor.login === username
+    
+        return isCorrectType && isCorrectAction && isCorrectUser
+    })
+}
+
+const fetchData = () => {
+    fetch(`https://api.github.com/users/${username}/events?per_page=100`)
+    .then((response) => {
+        if (!(response.status >= 200 && response.status < 299 || response.status === 304)) {
+            console.warn(`${response.status} status received, hiding recent github activity section`)
+            document.querySelector(activityContainerParentSelectorID).style.display = 'none'
+        }
+
+        return response.json()
+    })
+    .then(filterData)
+    .then(filtered => {
+        render(activityContainer, filtered)
+        storage.setWithExpiry(storage.getKey(), filtered, storage.getDefaultExpiration())
+    })
+}
+
+if (activityContainer) {
+    /**
+     * Cached localstroage queries handle busting when queried by saving an expiry
+     * field with the stored data which is one hour later than the last save. If
+     * this comes back as null, the ttl has been exceeded so this fetches again.
+     */
+    const cached = storage.getWithExpiry(storage.getKey())
+
+    if (cached) {
+        render(activityContainer, cached)
+    } else {
+        fetchData()
+    }
+
 } else {
     console.warn(`${activityContainerChildSelectorID} could not be found on the page, doing nothing`)
 }
