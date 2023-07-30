@@ -9,8 +9,8 @@ const storage = window.localStorageExtension
 const render = (container, data) => {
     container.innerHTML = ''
 
-    data.forEach(event => {
-        const {id, type, payload} = event
+    data.forEach(item => {
+        const {id, type, innerHTML} = item
 
         const eventContainer = document.createElement('div')
         eventContainer.setAttribute('data-id', id)
@@ -18,12 +18,7 @@ const render = (container, data) => {
 
         switch(type) {
             case 'PullRequestEvent':
-                const pr = payload.pull_request
-                const dateCreated = new Date(pr.created_at).toDateString()
-                const titleText = `"View pull request titled '${pr.title}' in the ${pr.base.repo.name} repo, created ${dateCreated}"`
-                const link = `<a href="${pr.html_url}" title=${titleText} target="_blank">#${pr.number}</a>`
-
-                eventContainer.innerHTML = `<li>${pr.title} (${link})</li>`
+                eventContainer.innerHTML = innerHTML
                 container.appendChild(eventContainer)
                 break
             default:
@@ -45,6 +40,20 @@ const filterData = (data) => {
     })
 }
 
+const cleanData = (data) => {
+    return data.map(event => {
+        const {id, type, payload} = event
+        const pr = payload.pull_request
+
+        const dateCreated = new Date(pr.created_at).toDateString()
+        const titleText = `"View pull request titled '${pr.title}' in the ${pr.base.repo.name} repo, created ${dateCreated}"`
+        const link = `<a href="${pr.html_url}" title=${titleText} target="_blank">#${pr.number}</a>`
+        const innerHTML = `<li>${pr.title} (${link})</li>`
+
+        return {id, type, innerHTML}
+    })
+}
+
 const fetchData = () => {
     fetch(`https://api.github.com/users/${username}/events?per_page=100`)
     .then((response) => {
@@ -56,9 +65,10 @@ const fetchData = () => {
         return response.json()
     })
     .then(filterData)
-    .then(filtered => {
-        render(activityContainer, filtered)
-        storage.setWithExpiry(storage.getKey(), filtered, storage.getDefaultExpiration())
+    .then(cleanData)
+    .then(data => {
+        render(activityContainer, data)
+        storage.setWithExpiry(storage.getKey(), data, storage.getDefaultExpiration())
     })
 }
 
