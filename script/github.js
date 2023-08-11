@@ -5,6 +5,7 @@ const activityContainerChildSelectorID = 'div#gh-activity'
 const activityContainer = document.querySelector(activityContainerChildSelectorID)
 
 const storage = window.localStorageExtension
+const debug = false
 
 const render = (container, data) => {
     container.innerHTML = ''
@@ -22,7 +23,7 @@ const render = (container, data) => {
                 container.appendChild(eventContainer)
                 break
             default:
-                console.warn(`unimplemented event type: ${type}`)
+                log(`unimplemented event type: ${type}`)
         }
     })
 }
@@ -54,12 +55,22 @@ const cleanData = (data) => {
     })
 }
 
+const hideActivitySection = (reason) => {
+    log(`Hiding recent github activity section: ${reason}`)
+    document.querySelector(activityContainerParentSelectorID).style.display = 'none'
+}
+
+const log = (message) => {
+    if (debug) {
+        console.log(message)
+    }
+}
+
 const fetchData = () => {
     fetch(`https://api.github.com/users/${username}/events?per_page=100`)
     .then((response) => {
-        if (!(response.status >= 200 && response.status < 299 || response.status === 304)) {
-            console.warn(`${response.status} status received, hiding recent github activity section`)
-            document.querySelector(activityContainerParentSelectorID).style.display = 'none'
+        if (!(response.status >= 200 && response.status < 299)) {
+            hideActivitySection(`${response.status} status received`)
         }
 
         return response.json()
@@ -67,7 +78,11 @@ const fetchData = () => {
     .then(filterData)
     .then(cleanData)
     .then(data => {
-        render(activityContainer, data)
+        if (data.length) {
+            render(activityContainer, data)
+        } else {
+            hideActivitySection('no filtered data to display')
+        }
         storage.setWithExpiry(storage.getKey(), data, storage.getDefaultExpiration())
     })
 }
@@ -87,5 +102,5 @@ if (activityContainer) {
     }
 
 } else {
-    console.warn(`${activityContainerChildSelectorID} could not be found on the page, doing nothing`)
+    log(`${activityContainerChildSelectorID} could not be found on the page, doing nothing`)
 }
