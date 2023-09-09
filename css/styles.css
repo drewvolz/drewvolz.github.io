@@ -110,3 +110,9 @@ a:hover {
     line-height: 1.8rem;
     font-size: 1.25rem;
 }
+
+/* github */
+
+#gh-activity li::first-letter {
+    text-transform: uppercase;
+}
