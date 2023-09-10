@@ -1,0 +1,102 @@
+[
+    {
+      "title": "All About Olaf",
+      "description": "An unofficial mobile app for St. Olaf College.",
+      "longDescription": "This iOS and Android app provides valuable information to students, faculty, staff, and visitors of St. Olaf College.",
+      "detailSummary": "Features",
+      "detailList": [
+        "Browse cafe menus",
+        "Access balances and meal plan info",
+        "Release print jobs",
+        "Explore student work opportunities",
+        "Search for courses",
+        "View building open and close schedules",
+        "Peruse all campus-wide calendars",
+        "Access the campus directory and important contacts",
+        "Tune-in to streaming events and radio programs",
+        "Keep up with campus news",
+        "See the campus at a birds-eye view with the map",
+        "Track the local bus routes",
+        "Define campus terms with the dictionary",
+        "Discover clubs and organizations",
+        "Quick access to Moodle"
+      ],
+      "links": {
+        "github": "https://github.com/StoDevX/AAO-React-Native",
+        "appstore": "https://itunes.apple.com/us/app/all-about-olaf/id938588319",
+        "playstore": "https://play.google.com/store/apps/details?id=com.allaboutolaf"
+      },
+      "image": "images/aao.png",
+      "imageLayout": "right"
+    },
+    {
+      "title": "Class Dumper",
+      "description":
+        "Examine Objective-C runtime information stored in Mach-O files.",
+      "detailSummary": "Features",
+      "detailList": [
+        "Invoke class-dump 3.5 (64 bit) from the file picker",
+        "Save results to a local sqlite database with GRDB",
+        "Manage previous dumps from a finder-like interface"
+      ],
+      "links": {
+        "github": "https://github.com/drewvolz/class-dumper"
+      },
+      "image": "images/class-dumper.png",
+      "imageLayout": "bottom"
+    },
+    {
+      "title": "CCC Server",
+      "description": "A node server to power All About Olaf.",
+      "longDescription": "Deployed via Docker on DigitalOcean.",
+      "detailSummary": "Features",
+      "detailList": [
+        "Network request caching",
+        "Data fetching for Google Calendar, RSS, Wordpress, ReasonCMS, Guthub Pages, Bon Appetit, and Presence.io"
+      ],
+      "links": {
+        "github": "https://github.com/frog-pond/ccc-server/"
+      },
+      "image": null,
+      "imageLayout": null
+    },
+    {
+      "title": "CCC Server Next",
+      "description": "The next version of CCC-Server, written in Rust.",
+      "longDescription": null,
+      "detailSummary": "Features",
+      "detailList": [
+        "Crates for fetching, parsing, and serving data",
+        "Distinct types for serde endpoints",
+        "Exported typedefs for typescript clients",
+        "Data fetching for Wordpress, GitHub pages, and Bon Appetit"
+      ],
+      "links": {
+        "github": "https://github.com/frog-pond/ccc-server-next/"
+      },
+      "image": null,
+      "imageLayout": null
+    },
+    {
+      "title": "Bottomless",
+      "description": "An unofficial mobile app for Bottomless subscribers.",
+      "longDescription": "This iOS and iPadOS app provides Bottomless coffee users a native experience for managing their account.",
+      "detailSummary": "Features",
+      "detailList": [
+        "Login",
+        "Listing your orders (up next, in-progress, past)",
+        "Graphing the scale’s weight and showing the scale’s status",
+        "Your referral counts and URL",
+        "Searching/filtering of products",
+        "Your membership details",
+        "Preferences for changing your ordering strategy",
+        "Pausing/unpausing automatic ordering",
+        "Alert settings"
+      ],
+      "links": {
+        "github": "https://github.com/drewvolz/bottomless"
+      },
+      "image": "images/bottomless.png",
+      "imageLayout": "right"
+    }
+]

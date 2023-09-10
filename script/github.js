@@ -5,7 +5,6 @@ const activityContainerChildSelectorID = 'div#gh-activity'
 const activityContainer = document.querySelector(activityContainerChildSelectorID)
 
 const storage = window.localStorageExtension
-const debug = false
 
 const render = (container, data) => {
     container.innerHTML = ''
@@ -58,12 +57,6 @@ const cleanData = (data) => {
 const hideActivitySection = (reason) => {
     log(`Hiding recent github activity section: ${reason}`)
     document.querySelector(activityContainerParentSelectorID).style.display = 'none'
-}
-
-const log = (message) => {
-    if (debug) {
-        console.log(message)
-    }
 }
 
 const fetchData = () => {

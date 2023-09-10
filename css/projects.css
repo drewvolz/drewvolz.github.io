@@ -89,7 +89,7 @@ details[open] summary ~ * {
 }
 
 .example > h1 > .links a {
-    margin-left: 0.2em;
+    margin-left: 0.4em;
 }
 
 .example > h1 > .links a:last-of-type:not(:only-of-type) {
