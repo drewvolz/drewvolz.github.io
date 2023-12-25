@@ -13,7 +13,7 @@ window.localStorageExtension = {
         const itemStr = localStorage.getItem(key)
 
         if (!itemStr) {
-            return null
+            return { value: null, expiry: null }
         }
 
         const item = JSON.parse(itemStr)
@@ -21,10 +21,10 @@ window.localStorageExtension = {
 
         if (now.getTime() > item.expiry) {
             localStorage.removeItem(key)
-            return null
+            return { value: null, expiry: null }
         }
 
-        return item.value
+        return { value: item.value, expiry: item.expiry }
     },
 
     setWithExpiry(key, value, ttl) {

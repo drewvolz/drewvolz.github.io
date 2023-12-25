@@ -7,6 +7,11 @@ const activityContainer = document.querySelector(activityContainerChildSelectorI
 const storage = window.localStorageExtension
 
 const render = (container, data) => {
+    if (data.length === 0) {
+        hideActivitySection('no data to display')
+        return
+    }
+
     container.innerHTML = ''
 
     data.forEach(item => {
@@ -63,7 +68,7 @@ const fetchData = () => {
     fetch(`https://api.github.com/users/${username}/events?per_page=100`)
     .then((response) => {
         if (!(response.status >= 200 && response.status < 299)) {
-            hideActivitySection(`${response.status} status received`)
+            throw new Error(`${response.status} status received`)
         }
 
         return response.json()
@@ -78,6 +83,9 @@ const fetchData = () => {
         }
         storage.setWithExpiry(storage.getKey(), data, storage.getDefaultExpiration())
     })
+    .catch(error => {
+        hideActivitySection(`error fetching data: ${error.message}`)
+    })
 }
 
 if (activityContainer) {
@@ -88,8 +96,8 @@ if (activityContainer) {
      */
     const cached = storage.getWithExpiry(storage.getKey())
 
-    if (cached) {
-        render(activityContainer, cached)
+    if (cached.value) {
+        render(activityContainer, cached.value)
     } else {
         fetchData()
     }
