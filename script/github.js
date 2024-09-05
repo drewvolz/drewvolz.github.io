@@ -1,8 +1,10 @@
 const username = 'drewvolz'
 
 const activityContainerParentSelectorID = 'section#gh-activity-container'
+const activitySectionElement = document.querySelector(activityContainerParentSelectorID)
+
 const activityContainerChildSelectorID = 'div#gh-activity'
-const activityContainer = document.querySelector(activityContainerChildSelectorID)
+const activityContentElement = document.querySelector(activityContainerChildSelectorID)
 
 const storage = window.localStorageExtension
 
@@ -30,6 +32,8 @@ const render = (container, data) => {
                 log(`unimplemented event type: ${type}`)
         }
     })
+
+    showActivitySection()
 }
 
 const filterData = (data) => {
@@ -61,7 +65,15 @@ const cleanData = (data) => {
 
 const hideActivitySection = (reason) => {
     log(`Hiding recent github activity section: ${reason}`)
-    document.querySelector(activityContainerParentSelectorID).style.display = 'none'
+    if (activitySectionElement) {
+        activitySectionElement.classList.remove('visible')
+    }
+}
+
+const showActivitySection = () => {
+    if (activitySectionElement) {
+        activitySectionElement.classList.add('visible')
+    }
 }
 
 const fetchData = () => {
@@ -77,7 +89,7 @@ const fetchData = () => {
     .then(cleanData)
     .then(data => {
         if (data.length) {
-            render(activityContainer, data)
+            render(activityContentElement, data)
         } else {
             hideActivitySection('no filtered data to display')
         }
@@ -88,20 +100,20 @@ const fetchData = () => {
     })
 }
 
-if (activityContainer) {
+if (activitySectionElement) {
     /**
-     * Cached localstroage queries handle busting when queried by saving an expiry
+     * Cached localstorage queries handle busting when queried by saving an expiry
      * field with the stored data which is one hour later than the last save. If
      * this comes back as null, the ttl has been exceeded so this fetches again.
      */
     const cached = storage.getWithExpiry(storage.getKey())
 
     if (cached.value) {
-        render(activityContainer, cached.value)
+        render(activityContentElement, cached.value)
     } else {
         fetchData()
     }
 
 } else {
-    log(`${activityContainerChildSelectorID} could not be found on the page, doing nothing`)
+    log(`${activityContainerParentSelectorID} could not be found on the page, doing nothing`)
 }
