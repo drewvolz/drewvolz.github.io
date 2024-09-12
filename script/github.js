@@ -49,15 +49,22 @@ const filterData = (data) => {
     })
 }
 
+const removeHtml = (html) => {
+    const div = document.createElement('div')
+    div.textContent = html
+    return div.innerText || ''
+}
+
 const cleanData = (data) => {
     return data.map(event => {
         const {id, type, payload} = event
         const pr = payload.pull_request
 
         const dateCreated = new Date(pr.created_at).toDateString()
-        const titleText = `"View pull request titled '${pr.title}' in the ${pr.base.repo.name} repo, created ${dateCreated}"`
+        const sanitizedTitle = removeHtml(pr.title)
+        const titleText = `"View pull request titled '${sanitizedTitle}' in the ${pr.base.repo.name} repo, created ${dateCreated}"`
         const link = `<a href="${pr.html_url}" title=${titleText} target="_blank">#${pr.number}</a>`
-        const innerHTML = `<li class="text">${pr.title} (${link})</li>`
+        const innerHTML = `<li class="text">${sanitizedTitle} (${link})</li>`
 
         return {id, type, innerHTML}
     })
