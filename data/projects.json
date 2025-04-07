@@ -52,7 +52,7 @@
       "detailSummary": "Features",
       "detailList": [
         "Network request caching",
-        "Data fetching for Google Calendar, RSS, Wordpress, ReasonCMS, Guthub Pages, Bon Appetit, and Presence.io"
+        "Data fetching for Google Calendar, RSS, Wordpress, ReasonCMS, Github Pages, Bon Appetit, and Presence.io"
       ],
       "links": {
         "github": "https://github.com/frog-pond/ccc-server/"
