@@ -37,6 +37,7 @@ function createHTML(data) {
 
         // Create the details/summary elements
         const detailsFeatures = document.createElement('details')
+        detailsFeatures.setAttribute('open', '')
         const summaryFeatures = document.createElement('summary')
         summaryFeatures.textContent = item.detailSummary
 
