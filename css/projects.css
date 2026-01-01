@@ -127,7 +127,6 @@ details[open] summary ~ * {
     }
 
     .example > h1 > .links {
-        margin: auto;
     }
 
     .example > h1 > .links a {
