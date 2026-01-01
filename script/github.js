@@ -110,7 +110,7 @@ const buildInnerHtml = ({ title, repoName, href }) => {
     const linkText = escapeHtml(title)
     const titleText = `View pull request titled '${title}' in the ${repoName} repo`
     const link = `<a href="${escapeHtml(href)}" title="${escapeHtml(titleText)}" target="_blank">${linkText}</a>`
-    return `<li class="text">${link}</li>`
+    return `<li>${link}</li>`
 }
 
 const buildDisplayData = (event, payload, pr) => {
