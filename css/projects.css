@@ -117,7 +117,7 @@ details[open] summary ~ * {
 }
 
 .example > .social-links-container .links a i {
-    font-size: 1.5em; /* Consistent icon size */
+    font-size: 2em; /* Consistent icon size, increased for prominence */
 }
 
 /* Remove this obsolete rule as margin is handled above */
