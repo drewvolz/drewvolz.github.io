@@ -102,7 +102,6 @@ function createHTML(data) {
 
         divExample.appendChild(h1Title)
         divExample.appendChild(divText)
-        divExample.appendChild(h1Links)
 
         // Create div element for the project image
         const divImage = document.createElement('div')
@@ -117,7 +116,7 @@ function createHTML(data) {
             switch(item.imageLayout) {
                 case 'right':
                     divImage.classList.add('image', 'right')
-                    divExample.appendChild(divImage)
+                    divExample.appendChild(divImage) // Append first, then h1Links
                     break
                 case 'bottom':
                     divText.appendChild(divImage)
@@ -126,6 +125,8 @@ function createHTML(data) {
 
             divImage.appendChild(img)
         }
+
+        divExample.appendChild(h1Links)
 
         projects.appendChild(divExample)
     })
