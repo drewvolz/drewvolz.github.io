@@ -1,0 +1,9 @@
+node_modules/
+package-lock.json
+package.json
+.DS_Store
+.serena/
+tmp/
+resume/
+scripts/
+data/github_activity.json
