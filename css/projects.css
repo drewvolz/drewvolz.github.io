@@ -135,10 +135,12 @@ details[open] summary ~ * {
     }
 
 	.example > .image {
+        grid-column: 1 / -1;
 	}
 
-    .example > .text img {
-	}
+    .example > .text {
+        grid-column: 1 / -1;
+    }
     
     .example img {
         max-width: 100%;
