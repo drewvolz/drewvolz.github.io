@@ -108,6 +108,8 @@ details[open] summary ~ * {
     display: flex;
     justify-content: center; /* Centered horizontally */
     margin-top: 1em;
+    grid-row: -1; /* Place in the last grid row */
+    grid-column: 1 / -1; /* Span all grid columns */
 }
 
 .example > .social-links-container .links a {
