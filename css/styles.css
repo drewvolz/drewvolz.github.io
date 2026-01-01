@@ -1,13 +1,17 @@
 /* general */
 
-html, body {
+html {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+body {
     width: 100%;
     margin: 0;
     font-family: Montserrat, sans-serif;
 }
 
 body, html, p {
-    font-size: 1.1rem;
 }
 
 body {
@@ -106,7 +110,6 @@ a:hover {
 }
 
 .text {
-    line-height: 1.8rem;
     font-size: 1.25rem;
 }
 

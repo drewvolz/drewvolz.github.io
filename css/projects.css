@@ -135,10 +135,8 @@ details[open] summary ~ * {
     }
 
 	.example > .image {
-        display: none;
 	}
 
     .example > .text img {
-        display: none;
 	}
 }
