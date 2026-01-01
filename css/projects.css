@@ -106,14 +106,19 @@ details[open] summary ~ * {
 
 .example > .social-links-container {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center; /* Centered horizontally */
     margin-top: 1em;
 }
 
 .example > .social-links-container .links a {
-    margin-left: 0.4em;
+    margin: 0 0.5em; /* Spacing between links */
 }
 
+.example > .social-links-container .links a i {
+    font-size: 1.5em; /* Consistent icon size */
+}
+
+/* Remove this obsolete rule as margin is handled above */
 .example > .social-links-container .links a:last-of-type:not(:only-of-type) {
     padding-right: 0;
 }
