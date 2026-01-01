@@ -40,23 +40,26 @@ const render = (container, data) => {
 
     container.innerHTML = ''
 
+    const ulElement = document.createElement('ul')
+
     data.forEach(item => {
         const {id, type, innerHTML} = item
 
-        const eventContainer = document.createElement('div')
-        eventContainer.setAttribute('data-id', id)
-        eventContainer.setAttribute('data-type', type)
+        const tempDiv = document.createElement('div')
+        tempDiv.innerHTML = innerHTML
 
-        switch(type) {
-            case 'PullRequestEvent':
-                eventContainer.innerHTML = innerHTML
-                container.appendChild(eventContainer)
-                break
-            default:
-                log(`unimplemented event type: ${type}`)
+        const liElement = tempDiv.firstChild
+
+        if (liElement && liElement.tagName === 'LI') {
+            liElement.setAttribute('data-id', id)
+            liElement.setAttribute('data-type', type)
+            ulElement.appendChild(liElement)
+        } else {
+            log(`Error: innerHTML did not produce an LI element for item type: ${type}`)
         }
     })
 
+    container.appendChild(ulElement)
     showActivitySection()
 }
 

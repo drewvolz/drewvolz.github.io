@@ -115,10 +115,6 @@ a:hover {
 
 /* github */
 
-#gh-activity li {
-    padding-left: 1em;
-}
-
 #gh-activity li::first-letter {
     text-transform: uppercase;
 }
