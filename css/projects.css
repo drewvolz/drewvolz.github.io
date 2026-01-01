@@ -139,4 +139,9 @@ details[open] summary ~ * {
 
     .example > .text img {
 	}
+    
+    .example img {
+        max-width: 100%;
+        height: auto;
+    }
 }
