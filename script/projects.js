@@ -67,8 +67,9 @@ function createHTML(data) {
 
         divText.appendChild(detailsFeatures)
 
-        // Create h1 element for links
-        const h1Links = document.createElement('h1')
+        // Create div element for social links
+        const divSocialLinks = document.createElement('div')
+        divSocialLinks.classList.add('social-links-container')
         const spanLinks = document.createElement('span')
         spanLinks.classList.add('links')
 
@@ -98,7 +99,7 @@ function createHTML(data) {
             spanLinks.appendChild(projectLink)
         })
 
-        h1Links.appendChild(spanLinks)
+        divSocialLinks.appendChild(spanLinks)
 
         divExample.appendChild(h1Title)
         divExample.appendChild(divText)
@@ -116,7 +117,7 @@ function createHTML(data) {
             switch(item.imageLayout) {
                 case 'right':
                     divImage.classList.add('image', 'right')
-                    divExample.appendChild(divImage) // Append first, then h1Links
+                    divExample.appendChild(divImage)
                     break
                 case 'bottom':
                     divText.appendChild(divImage)
@@ -126,7 +127,7 @@ function createHTML(data) {
             divImage.appendChild(img)
         }
 
-        divExample.appendChild(h1Links)
+        divExample.appendChild(divSocialLinks)
 
         projects.appendChild(divExample)
     })

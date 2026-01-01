@@ -62,10 +62,6 @@ details[open] summary ~ * {
 }
 
 .example > h1 {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .example > .text {
@@ -80,21 +76,9 @@ details[open] summary ~ * {
     grid-column: 2;
 }
 
-.example > h1 > * {
-    flex: 0 1 auto;
-}
 
-.example > h1 > .links {
-    margin-left: auto;
-}
 
-.example > h1 > .links a {
-    margin-left: 0.4em;
-}
 
-.example > h1 > .links a:last-of-type:not(:only-of-type) {
-    padding-right: 0;
-}
 
 .example > .image {
 	display: grid;
@@ -120,18 +104,27 @@ details[open] summary ~ * {
     filter: brightness(var(--brightness));
 }
 
+.example > .social-links-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1em;
+}
+
+.example > .social-links-container .links a {
+    margin-left: 0.4em;
+}
+
+.example > .social-links-container .links a:last-of-type:not(:only-of-type) {
+    padding-right: 0;
+}
+
 @media screen and (max-width: 768px) {
 	.example {
         grid-template-columns: 1fr;
         margin: 1em 0em;
     }
 
-    .example > h1 > .links {
-    }
 
-    .example > h1 > .links a {
-        padding: 0.2em;
-    }
 
 	.example > .image {
         grid-column: 1 / -1;
