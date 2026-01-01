@@ -65,7 +65,7 @@ details[open] summary ~ * {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-self: flex-end;
+    align-items: center;
 }
 
 .example > .text {
