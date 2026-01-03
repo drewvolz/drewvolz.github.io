@@ -1,8 +1,8 @@
 [
     {
       "title": "All About Olaf",
-      "description": "An unofficial mobile app for St. Olaf College.",
-      "longDescription": "This iOS and Android app provides valuable information to students, faculty, staff, and visitors of St. Olaf College.",
+      "description": "The unofficial mobile app for St. Olaf College.",
+      "longDescription": "This iOS app provides valuable information to students, faculty, staff, and visitors of St. Olaf College.",
       "detailSummary": "Features",
       "detailList": [
         "Browse cafe menus",
@@ -23,8 +23,7 @@
       ],
       "links": {
         "github": "https://github.com/StoDevX/AAO-React-Native",
-        "appstore": "https://itunes.apple.com/us/app/all-about-olaf/id938588319",
-        "playstore": "https://play.google.com/store/apps/details?id=com.allaboutolaf"
+        "appstore": "https://itunes.apple.com/us/app/all-about-olaf/id938588319"
       },
       "image": "images/aao.png",
       "imageLayout": "right"
@@ -47,7 +46,7 @@
     },
     {
       "title": "CCC Server",
-      "description": "A node server to power All About Olaf.",
+      "description": "A node server to power All About Olaf and CARLS.",
       "longDescription": "Deployed via Docker on DigitalOcean.",
       "detailSummary": "Features",
       "detailList": [
