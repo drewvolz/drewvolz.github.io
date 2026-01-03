@@ -1,0 +1,64 @@
+.about-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2rem auto;
+    gap: 1rem;
+    max-width: 1200px;
+}
+
+.card {
+    background-color: var(--example-bg);
+    border-radius: 15px;
+	box-shadow: var(--box-shadow-2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 1rem;
+    flex: 1 1 100%;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon {
+    font-size: 2rem;
+}
+
+.card-icon-home { color: #03952c; }
+.card-icon-education { color: #dcad03;  }
+.card-icon-work { color: #3d77ff; }
+.card-icon-music { color: #de3800; }
+
+.card-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.card-content p {
+    font-size: 1rem;
+    text-align: center;
+    padding-bottom: 0px;
+    margin-top: 0.25rem;
+    color: var(--text-color);
+    filter: brightness(var(--brightness-muted));
+}
+
+@media (min-width: 768px) {
+    .card {
+        flex: 0 1 calc(50% - 0.5rem);
+    }
+}
+
+@media (min-width: 1024px) {
+    .card {
+        flex: 0 1 calc(16%);
+    }
+}

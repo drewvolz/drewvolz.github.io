@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./css/global.css" type="text/css">
     <link rel="stylesheet" href="./css/styles.css" type="text/css">
     <link rel="stylesheet" href="./css/projects.css" type="text/css">
+    <link rel="stylesheet" href="./css/about.css" type="text/css">
 </head>
 <body>
     <div class="grid-container">
@@ -19,20 +20,55 @@
                 <h1 class="title">Drew Volz</h1>
                 <img class="avatar" src="./images/avatar.png" alt="photo of drew" />
                 <ul class="navigation">
-                    <li><a title="GitHub" href="https://github.com/drewvolz">GitHub</a></li>
-                    <li><a title="LinkedIn" href="https://www.linkedin.com/in/drew-volz/">LinkedIn</a></li>
-                    <li><a title="Email" href="mailto:contact@drewvolz.com">Email</a></li>
-                    <li><a title="Resume" href="./Drew_Volz_Resume.pdf">Resume</a></li>
+                    <li><a title="GitHub" href="https://github.com/drewvolz" target="_blank"><i class="fab fa-github"></i></a></li>
+                    <li><a title="LinkedIn" href="https://www.linkedin.com/in/drew-volz/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                    <li><a title="Email" href="mailto:contact@drewvolz.com"><i class="fas fa-envelope"></i></a></li>
+                    <li><a title="Resume" href="./Drew_Volz_Resume.pdf" target="_blank" download><i class="fas fa-file-alt"></i></a></li>
                 </ul>
             </section>
 
             <h1>About Me</h1>
-            <p>I'm an iOS and web developer based in Seattle.
-                I'm interested in&nbsp;
-                <a href="https://soundcloud.com/dvolz" title="My personal compositions on soundcloud">composing music</a>,&nbsp;
-                <a href="https://soundcloud.com/hatrickpenry" title="Songs from my ska band, Hatrick Penry, on soundcloud">performing music</a>,&nbsp;
-                writing educational software and poking at private APIs.
-            </p>
+            <div class="about-cards">
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-home card-icon-home"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Hometown</h3>
+                        <p>Boulder County, Colorado</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-graduation-cap card-icon-education"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Education</h3>
+                        <p>St. Olaf College</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-briefcase card-icon-work"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Work</h3>
+                        <p>Best Buy</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-music card-icon-music"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Music</h3>
+                        <p><a href="https://soundcloud.com/dvolz" title="My personal compositions on soundcloud">Compositions</a>
+                        <br />
+                        <a href="https://soundcloud.com/hatrickpenry" title="My ska band Hatrick Penry on soundcloud">Hatrick Penry</a></p>
+                    </div>
+                </div>
+            </div>
+
 
             <section id="gh-activity-container">
                 <h1>GitHub Activity</h1>
@@ -43,10 +79,40 @@
                 <p><noscript>Dang, looks like you don't have javascript enabled.</noscript></p>
             </section>
 
+            <section id="projects-music">
+                <h1>Select Compositions</h1>
+                <p class="text projects">I write classical, jazz, ska, electronic; some select classical pieces below</p>
+                <iframe width="100%" height="470" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A2070533073&color=%23080000&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false"></iframe>
+            </section>
+
             <section id="projects-container">
                 <h1>Projects</h1>
-                <p class="text projects">Here are a few open-source projects I've been working on</p>
-                <div id="projects"></div>
+                <p class="text projects">Here are a few open-source software projects I've been working on</p>
+
+                <!-- Tabbed interface for desktop -->
+                <div class="project-tabs-wrapper">
+                    <div class="project-tabs-nav">
+                        <!-- Tabs generated by JS -->
+                    </div>
+                    <div class="project-tabs-content">
+                        <!-- Tab content generated by JS -->
+                    </div>
+                </div>
+
+                <!-- Stacked interface for mobile/tablet -->
+                <div class="project-stacked-wrapper">
+                    <!-- Stacked projects generated by JS -->
+                </div>
+            </section>
+
+            <section class="contact-section">
+                <h1>Get in touch</h1>
+                <div class="contact-icons">
+                    <a title="Email" href="mailto:contact@drewvolz.com"><i class="fas fa-envelope"></i></a>
+                    <a title="LinkedIn" href="https://www.linkedin.com/in/drew-volz/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a title="GitHub" href="https://github.com/drewvolz" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+                <a class="download-button" href="./Drew_Volz_Resume.pdf" target="_blank" download>Download Resume</a>
             </section>
         </div>
     </div>

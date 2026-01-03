@@ -16,13 +16,13 @@ details[open] summary ~ * {
 }
 
 .example {
+    background: var(--tab-active-bg);
 	font-size: 80%;
 	box-shadow: var(--box-shadow-2);
     padding: 16pt;
     margin: 1em 2em;
 	transition: box-shadow 0.125s ease-in-out;
 	border-radius: 4pt;
-    background-color: var(--example-bg);
 
     display: grid;
     grid-template-columns: 3fr 1fr;
@@ -43,14 +43,12 @@ details[open] summary ~ * {
 	margin-bottom: 0;
 }
 
-.example:hover {
-	box-shadow: var(--box-shadow-8);
-	transition: box-shadow 0.125s ease-in-out;
-	z-index: 1;
-}
-
 .example p.description {
     font-style: italic;
+}
+
+.example p.longDescription {
+    font-size: 0.8em;
 }
 
 .example:first-of-type {
@@ -75,10 +73,6 @@ details[open] summary ~ * {
 .example > .right {
     grid-column: 2;
 }
-
-
-
-
 
 .example > .image {
 	display: grid;
@@ -125,13 +119,21 @@ details[open] summary ~ * {
     padding-right: 0;
 }
 
+/* Base styles for project wrappers */
+.project-tabs-wrapper {
+    display: none; /* Hidden by default on mobile/tablet */
+}
+
+.project-stacked-wrapper {
+    display: block; /* Shown by default on mobile/tablet */
+}
+
 @media screen and (max-width: 768px) {
 	.example {
+        background: var(--tab-active-bg);
         grid-template-columns: 1fr;
         margin: 1em 0em;
     }
-
-
 
 	.example > .image {
         grid-column: 1 / -1;
@@ -144,5 +146,107 @@ details[open] summary ~ * {
     .example img {
         max-width: 100%;
         height: auto;
+    }
+}
+
+/* Tabbed interface for projects */
+@media (min-width: 1024px) {
+    .project-tabs-wrapper {
+        display: flex; /* Show tabbed wrapper on desktop */
+    }
+
+    .project-stacked-wrapper {
+        display: none; /* Hide stacked wrapper on desktop */
+    }
+
+    #projects-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .project-tabs-wrapper {
+        flex-direction: column;
+        width: 100%;
+        max-width: 960px; /* Constrain width similar to main content */
+        margin: 0 auto;
+        border: 1px solid var(--border-color, #ccc);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .project-tabs-nav {
+        display: flex;
+        border-bottom: 1px solid var(--border-color, #ccc);
+    }
+
+    .project-tab-button {
+        flex-grow: 1;
+        font-size: medium;
+        padding: 0.75rem 1.5rem;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        font-weight: bold;
+        color: var(--text-color);
+        transition: background-color 0.2s ease, color 0.2s ease;
+        border-right: 1px solid var(--border-color, #ccc);
+    }
+
+    .project-tab-button:last-child {
+        border-right: none;
+    }
+
+    .project-tab-button:hover:not(.active) {
+        background: var(--example-background);
+    }
+
+    .project-tab-button.active {
+        background: white;
+        color: black;
+        position: relative;
+        z-index: 1;
+    }
+
+    .project-tabs-content {
+        background: var(--tab-active-bg);
+        padding: 1.5rem;
+        min-height: 400px; /* Ensure content area has some height */
+    }
+
+    .project-tab-content {
+        /* Styles for the individual project content within tabs */
+        box-shadow: none; /* Remove redundant shadow from .example */
+        border-radius: 0; /* Remove redundant border-radius from .example */
+        margin: 0; /* Remove redundant margin from .example */
+        padding: 0; /* Handled by .project-tabs-content padding */
+    }
+
+    .project-tab-content .example {
+        background-color: transparent; /* Ensure example inside tab content is transparent */
+    }
+
+    .project-tab-content .example > h1 {
+        display: none; /* Hide project title inside tab content */
+    }
+
+    .project-tab-content .example {
+        grid-template-columns: 1fr 1fr; /* Adjust grid for tab content */
+        gap: 2em;
+        margin: 0; /* Reset margin for example inside tab content */
+        padding: 0; /* Reset padding for example inside tab content */
+    }
+
+    .project-tab-content .example > .image.right {
+        order: 2; /* Move image to right for tab content */
+    }
+
+    .project-tab-content .example > .text {
+        order: 1; /* Move text to left for tab content */
+    }
+
+    /* Override mobile styles for desktop tab view */
+    .project-tab-content .example > .image,
+    .project-tab-content .example > .text {
+        grid-column: auto;
     }
 }

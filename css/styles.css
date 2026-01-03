@@ -61,14 +61,79 @@ a:hover {
     }
 
     .navigation > li~li {
-        border-left: 1px solid var(--text-color);
+        border-left: none;
     }
 
     .navigation > li > a {
         display: block;
         text-align: center;
-        margin: 0px 5px 0px 10px;
+        margin: 0px 10px;
     }
+}
+
+/* Styling for icon navigation links */
+.navigation a {
+    border-bottom: none;
+    transition: none;
+}
+
+.navigation i {
+    font-size: 2.2em;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.navigation a:hover i {
+    transform: scale(1.2);
+    filter: brightness(1.5);
+}
+
+/* Styling for the "Get in touch" section */
+.contact-section {
+    text-align: center;
+    margin-top: 3em;
+    padding-top: 2em;
+}
+
+.contact-section h1 {
+    margin-bottom: 1em;
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2.2em;
+}
+
+.contact-icons a {
+    border-bottom: none;
+}
+
+.contact-icons i {
+    font-size: 3em;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.contact-icons a:hover i {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+.download-button {
+    display: inline-block;
+    background: var(--tab-active-bg);
+    color: var(--background);
+    padding: 0.8em 1.5em;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 2em;
+    border-bottom: none !important;
+}
+
+.download-button:hover {
+    color: var(--text-color);
+    transform: translateY(-2px);
+    filter: brightness(1.2);
 }
 
 /* grid */

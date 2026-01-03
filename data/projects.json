@@ -76,27 +76,5 @@
       },
       "image": null,
       "imageLayout": null
-    },
-    {
-      "title": "Bottomless",
-      "description": "An unofficial mobile app for Bottomless subscribers.",
-      "longDescription": "This iOS and iPadOS app provides Bottomless coffee users a native experience for managing their account.",
-      "detailSummary": "Features",
-      "detailList": [
-        "Login",
-        "Listing your orders (up next, in-progress, past)",
-        "Graphing the scale’s weight and showing the scale’s status",
-        "Your referral counts and URL",
-        "Searching/filtering of products",
-        "Your membership details",
-        "Preferences for changing your ordering strategy",
-        "Pausing/unpausing automatic ordering",
-        "Alert settings"
-      ],
-      "links": {
-        "github": "https://github.com/drewvolz/bottomless"
-      },
-      "image": "images/bottomless.png",
-      "imageLayout": "right"
     }
 ]
