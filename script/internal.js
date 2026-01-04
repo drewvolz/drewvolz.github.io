@@ -11,22 +11,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const genreLinks = document.querySelectorAll('.music-genre-link')
 
     if (musicPlayer && genreLinks.length > 0) {
-        const currentSrc = musicPlayer.src
-        const urlParamIndex = currentSrc.indexOf('playlists/')
-        const baseSrc = currentSrc.substring(0, urlParamIndex + 'playlists/'.length)
-
-        const suffixStartIndex = currentSrc.indexOf('&color=')
-        const suffix = currentSrc.substring(suffixStartIndex)
-
         genreLinks.forEach(link => {
             link.addEventListener('click', (event) => {
-                event.preventDefault() // Prevent the default link behavior
+                event.preventDefault()
                 const playlistId = link.dataset.playlistId
-                
-                if (playlistId) {
-                    const newSrc = baseSrc + playlistId + suffix
-                    musicPlayer.src = newSrc
-                    log(`Changed playlist to ID: ${playlistId}`)
+
+                if (!playlistId) {
+                    log('No playlist ID found.')
+                    return
+                }
+
+                try {
+                    const outerUrl = new URL(musicPlayer.src)
+                    const innerUrlParam = outerUrl.searchParams.get('url')
+                    
+                    if (innerUrlParam) {
+                        const innerUrl = new URL(innerUrlParam)
+                        innerUrl.pathname = `/playlists/${playlistId}`
+                        outerUrl.searchParams.set('url', innerUrl.toString())
+                        musicPlayer.src = outerUrl.toString()
+                    } else {
+                        log('Inner URL parameter not found in iframe src.')
+                    }
+                } catch (error) {
+                    log(`Error parsing URL: ${error.message}`)
                 }
             })
         })
