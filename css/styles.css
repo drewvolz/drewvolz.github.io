@@ -183,7 +183,15 @@ a:hover {
 
 /* github */
 
-#gh-activity li::first-letter {
+#gh-activity li .fas.fa-code-pull-request {
+    color: rgb(80,29,175);
+}
+
+#gh-activity > ul > li > a {
+    display: inline-block;
+}
+
+#gh-activity > ul > li > a::first-letter {
     text-transform: uppercase;
 }
 
@@ -193,4 +201,9 @@ a:hover {
 
 #gh-activity-container.visible {
     display: block;
+}
+
+#gh-activity > ul {
+    list-style: none;
+    padding-inline-start: 0px;
 }

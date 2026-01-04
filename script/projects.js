@@ -44,7 +44,9 @@ function createProjectHTML(item) {
 
     // Create the details/summary elements
     const detailsFeatures = document.createElement('details')
-    detailsFeatures.setAttribute('open', '')
+    if (window.innerWidth >= 1024) {
+        detailsFeatures.setAttribute('open', '')
+    }
     const summaryFeatures = document.createElement('summary')
     summaryFeatures.textContent = item.detailSummary
 

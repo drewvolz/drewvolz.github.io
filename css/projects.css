@@ -11,12 +11,10 @@ details[open] summary ~ * {
 }
 
 .projects {
-    display: inline-flex;
-    width: auto;
+    display: block;
 }
 
 .example {
-    background: var(--tab-active-bg);
 	font-size: 80%;
 	box-shadow: var(--box-shadow-2);
     padding: 16pt;
@@ -44,7 +42,10 @@ details[open] summary ~ * {
 }
 
 .example p.description {
+    font-size: 0.9em;
     font-style: italic;
+    margin-top: 0;
+    margin-bottom: 0.5em;
 }
 
 .example p.longDescription {
@@ -60,10 +61,12 @@ details[open] summary ~ * {
 }
 
 .example > h1 {
+    margin-bottom: 0.2em;
 }
 
 .example > .text {
     align-self: flex-start;
+    margin-top: 0.5em;
 }
 
 .example > .left {
@@ -100,37 +103,36 @@ details[open] summary ~ * {
 
 .example > .social-links-container {
     display: flex;
-    justify-content: center; /* Centered horizontally */
+    justify-content: center;
     margin-top: 1em;
-    grid-column: 1 / -1; /* Span all grid columns */
-    align-self: end; /* Align to the bottom of its grid cell */
+    grid-column: 1 / -1;
 }
 
 .example > .social-links-container .links a {
-    margin: 0 0.5em; /* Spacing between links */
+    margin: 0 0.5em;
 }
 
 .example > .social-links-container .links a i {
-    font-size: 2em; /* Consistent icon size, increased for prominence */
+    font-size: 2em;
 }
 
-/* Remove this obsolete rule as margin is handled above */
+
 .example > .social-links-container .links a:last-of-type:not(:only-of-type) {
     padding-right: 0;
 }
 
-/* Base styles for project wrappers */
+
 .project-tabs-wrapper {
-    display: none; /* Hidden by default on mobile/tablet */
+    display: none;
 }
 
 .project-stacked-wrapper {
-    display: block; /* Shown by default on mobile/tablet */
+    display: block;
 }
 
 @media screen and (max-width: 768px) {
 	.example {
-        background: var(--tab-active-bg);
+        background: var(--example-background);
         grid-template-columns: 1fr;
         margin: 1em 0em;
     }
@@ -149,14 +151,20 @@ details[open] summary ~ * {
     }
 }
 
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+    .example {
+        background: var(--example-background);
+    }
+}
+
 /* Tabbed interface for projects */
 @media (min-width: 1024px) {
     .project-tabs-wrapper {
-        display: flex; /* Show tabbed wrapper on desktop */
+        display: flex;
     }
 
     .project-stacked-wrapper {
-        display: none; /* Hide stacked wrapper on desktop */
+        display: none;
     }
 
     #projects-container {
@@ -167,7 +175,7 @@ details[open] summary ~ * {
     .project-tabs-wrapper {
         flex-direction: column;
         width: 100%;
-        max-width: 960px; /* Constrain width similar to main content */
+        max-width: 960px;
         margin: 0 auto;
         border: 1px solid var(--border-color, #ccc);
         border-radius: 8px;
@@ -210,43 +218,45 @@ details[open] summary ~ * {
     .project-tabs-content {
         background: var(--tab-active-bg);
         padding: 1.5rem;
-        min-height: 400px; /* Ensure content area has some height */
+        min-height: 400px;
     }
 
     .project-tab-content {
-        /* Styles for the individual project content within tabs */
-        box-shadow: none; /* Remove redundant shadow from .example */
-        border-radius: 0; /* Remove redundant border-radius from .example */
-        margin: 0; /* Remove redundant margin from .example */
-        padding: 0; /* Handled by .project-tabs-content padding */
+        height: 100%;
+        box-shadow: none;
+        border-radius: 0;
+        margin: 0;
+        padding: 0;
     }
 
     .project-tab-content .example {
-        background-color: transparent; /* Ensure example inside tab content is transparent */
-    }
-
-    .project-tab-content .example > h1 {
-        display: none; /* Hide project title inside tab content */
-    }
-
-    .project-tab-content .example {
-        grid-template-columns: 1fr 1fr; /* Adjust grid for tab content */
+        background-color: transparent;
+        height: 100%;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr auto;
         gap: 2em;
-        margin: 0; /* Reset margin for example inside tab content */
-        padding: 0; /* Reset padding for example inside tab content */
+        margin: 0;
+        padding: 0;
     }
 
     .project-tab-content .example > .image.right {
-        order: 2; /* Move image to right for tab content */
+        order: 2;
     }
 
     .project-tab-content .example > .text {
-        order: 1; /* Move text to left for tab content */
+        grid-row: 1;
+        order: 1;
+        overflow-y: auto;
     }
 
     /* Override mobile styles for desktop tab view */
     .project-tab-content .example > .image,
     .project-tab-content .example > .text {
         grid-column: auto;
+    }
+
+    .project-tab-content .example > .social-links-container {
+        grid-column: 1 / -1;
+        grid-row: 2;
     }
 }
