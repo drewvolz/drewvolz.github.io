@@ -61,7 +61,7 @@ function createProjectHTML(item) {
     })
 
     // Create details content element
-    const detailsContentDiv = document.createElement('div');
+    const detailsContentDiv = document.createElement('div')
     detailsContentDiv.appendChild(ulFeatures)
     
     // Append summary and details content to the details element
@@ -134,7 +134,7 @@ function createProjectHTML(item) {
             case 'left':
                 divImage.classList.add('image', 'left')
                 divExample.insertBefore(divImage, h1Title.nextSibling) // Insert after h1
-                break;
+                break
         }
 
         divImage.appendChild(img)
@@ -146,7 +146,7 @@ function createProjectHTML(item) {
 }
 
 function initializeTabbedProjects(data) {
-    if (!projectsNav || !projectsContent) return;
+    if (!projectsNav || !projectsContent) return
 
     projectsNav.innerHTML = '' // Clear existing tabs
     projectsContent.innerHTML = '' // Clear existing content
@@ -185,7 +185,7 @@ function initializeTabbedProjects(data) {
 }
 
 function initializeStackedProjects(data) {
-    if (!projectsStacked) return;
+    if (!projectsStacked) return
 
     projectsStacked.innerHTML = '' // Clear existing stacked projects
 
@@ -200,7 +200,7 @@ const fetchProjectData = (path) => {
     .then((response) => response.json())
     .then(data => {
         // Assign a unique ID to each project based on its index
-        const projectsWithIds = data.map((item, index) => ({ ...item, id: `project-${index}` }));
+        const projectsWithIds = data.map((item, index) => ({ ...item, id: `project-${index}` }))
 
         if (projectsWithIds.length) {
             initializeTabbedProjects(projectsWithIds)
@@ -210,9 +210,9 @@ const fetchProjectData = (path) => {
         }
     })
     .catch(error => {
-        console.error('Error fetching project data:', error);
-        hideProjectSection('error fetching data');
-    });
+        console.error('Error fetching project data:', error)
+        hideProjectSection('error fetching data')
+    })
 }
 
 if (projectsContainer) {

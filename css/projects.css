@@ -5,6 +5,29 @@ details[open] summary ~ * {
     font-size: 80%;
 }
 
+details {
+    &[open] summary::before {
+        /* ▼ */
+        content: '\25BC\FE0E\00a0';
+    }
+
+    summary {
+        list-style: none; /* For Firefox/non-WebKit */
+        cursor: pointer;
+        display: flex; /* To align marker and text */
+        align-items: center;
+
+        &::before {
+            /* ▶︎ */
+            content: '\25B6\FE0E\00a0';
+        }
+
+        &::-webkit-details-marker {
+            display: none;
+         }
+    }
+}
+
 @keyframes sweep {
     0%    {opacity: 0;}
     100%  {opacity: 1;}
