@@ -41,7 +41,7 @@ a:hover {
         text-align: center;
         display: flex;
         justify-content: center;
-        gap: 20px;
+        gap: 1rem;
     }
 
     .navigation > li {
@@ -57,6 +57,9 @@ a:hover {
 @media (min-width: 500px) {
     .navigation {
         padding: 0;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
     }
 
     .navigation > li {
@@ -70,7 +73,6 @@ a:hover {
     .navigation > li > a {
         display: block;
         text-align: center;
-        margin: 0px 10px;
     }
 }
 
@@ -81,7 +83,7 @@ a:hover {
 }
 
 .navigation i {
-    font-size: 2.2em;
+    font-size: 1.8em;
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
@@ -104,7 +106,7 @@ a:hover {
 .contact-icons {
     display: flex;
     justify-content: center;
-    gap: 2.2em;
+    gap: 1rem;
 }
 
 .contact-icons a {
@@ -112,7 +114,7 @@ a:hover {
 }
 
 .contact-icons i {
-    font-size: 3em;
+    font-size: 1.8em;
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
