@@ -9,6 +9,7 @@
     --example-background: rgba(37, 36, 36, 0.6);
 
     --tab-active-bg: linear-gradient(135deg, #1c62d3 0%, #8b5cf6 100%);
+    --music-link-active-bg: linear-gradient(to right, #8a2387, #e94057, #f27121);
 
     --brightness: 100%;
     --brightness-muted: 70%;

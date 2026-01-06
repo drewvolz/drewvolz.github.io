@@ -35,6 +35,18 @@ a:hover {
     border-bottom: 2px solid rgba(255, 255, 255, 0.87);
 }
 
+.music-genre-link.active-link {
+    font-weight: bold;
+    color: transparent;
+    background: #fe8c00;
+    background-image: var(--music-link-active-bg);
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: 'inline-block';
+}
+
 @media (max-width: 499px) {
     .navigation {
         padding: 0px;
@@ -208,4 +220,18 @@ a:hover {
 #gh-activity > ul {
     list-style: none;
     padding-inline-start: 0px;
+}
+
+#player-container {
+    position: relative;
+    width: 100%;
+    height: 470px;
+}
+
+#player-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
